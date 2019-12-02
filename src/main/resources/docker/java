@@ -1,0 +1,4 @@
+FROM maven
+WORKDIR /
+COPY / /
+CMD mvn exec:java

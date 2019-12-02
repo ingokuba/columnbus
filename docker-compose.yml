@@ -1,0 +1,20 @@
+version: '3.5'
+services:
+   hbase:
+      container_name: columnbus-hbase
+      image: dajobe/hbase
+      ports:
+      - 2181:2181
+      - 16000:16000
+      - 16010:16010
+      - 16020:16020
+   java:
+      container_name: columnbus-java
+      depends_on:
+      - hbase
+      build:
+         context: .
+         dockerfile: src/main/resources/docker/java
+networks:
+   default:
+      name: columnbus
