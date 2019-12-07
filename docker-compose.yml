@@ -8,13 +8,13 @@ services:
       - 16000:16000
       - 16010:16010
       - 16020:16020
-   java:
-      container_name: columnbus-java
+   maven:
+      container_name: columnbus-maven
       depends_on:
       - hbase
       build:
          context: .
-         dockerfile: src/main/resources/docker/java
+         dockerfile: src/main/resources/docker/maven
 networks:
    default:
       name: columnbus
