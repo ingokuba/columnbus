@@ -1,5 +1,4 @@
 FROM maven
 WORKDIR /
-COPY pom.xml /
-COPY src /
+COPY / /
 CMD mvn exec:java
